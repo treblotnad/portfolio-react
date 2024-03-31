@@ -1,16 +1,48 @@
-import { Link } from "react-router-dom";
-export default function Nav() {
-  // The Navbar UI component will render each of the Link elements in the links prop
+import { Link, useLocation } from "react-router-dom";
+
+function Nav() {
+  const currentPage = useLocation().pathname;
+
   return (
-    <div
-      links={[
-        <Link key={1} className="nav-link text-light" to="/">
-          Home
-        </Link>,
-        <Link key={2} className="nav-link text-light" to="/about">
-          About Us
-        </Link>,
-      ]}
-    />
+    <ul className="nav nav-tabs">
+      <li className="nav-item">
+        <Link
+          to="/"
+          className={currentPage === "/" ? "nav-link active" : "nav-link"}
+        >
+          About Me
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          to="/portfolio"
+          className={
+            currentPage === "/portfolio" ? "nav-link active" : "nav-link"
+          }
+        >
+          Portfolio
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          to="/contact"
+          className={
+            currentPage === "/contact" ? "nav-link active" : "nav-link"
+          }
+        >
+          Contact
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          to="/resume"
+          className={currentPage === "/resume" ? "nav-link active" : "nav-link"}
+        >
+          Resume
+        </Link>
+      </li>
+    </ul>
   );
 }
+
+export default Nav;
