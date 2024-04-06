@@ -1,7 +1,11 @@
 export default function Resume() {
-    return (
+  return (
+    <div className="resumePageContainer">
       <div>
-        <h2>resume page</h2>
+        <a href="/docs/DTolbertResume2023.pdf">
+          <img src="/images/resumeImg.jpg" alt="resume" />
+        </a>
       </div>
-    );
-  }
+    </div>
+  );
+}

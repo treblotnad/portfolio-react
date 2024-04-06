@@ -77,6 +77,11 @@ textarea {
 .aboutContainer h2 {
   font-size: 2.5rem;
 }
+.resumePageContainer {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
 
 #contact {
   display: flex;
